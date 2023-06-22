@@ -21,13 +21,13 @@
                 <div class="input">
                     <label class="text-semibold text-xl">VARIÁVEIS</label>
                     <input type="number" name="variavel" class="campo">
-                    {{ $errors->has('variavel') ? $errors->first('variavel') : '' }}
                 </div>
+                {{ $errors->has('variavel') ? $errors->first('variavel') : '' }}
                 <div class="input">
                     <label class="text-semibold text-xl">RESTRIÇÕES</label>
                     <input type="number" name="restricao" class="campo">
-                    {{ $errors->has('restricao') ? $errors->first('restricao') : '' }}
                 </div>
+                {{ $errors->has('restricao') ? $errors->first('restricao') : '' }}
                 <div class="w-full flex justify-center">
                     <button type="submit" class="botao">ALGÉBRICO</button>
                     <button style="margin-left: 50px" type="submit" class="botao">GRÁFICO</button>
