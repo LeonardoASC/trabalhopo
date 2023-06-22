@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class algebricoController extends Controller
 {
     function index(Request $request){
-        
+
         $regras = [
             'variavel' => 'required|lte:100000000000|gte:2',
             'restricao' => 'required|lte:10|gte:1'
@@ -28,14 +28,23 @@ class algebricoController extends Controller
         $variaveis = $request->input('variavel');
         $restricoes = $request->input('restricao');
 
-        
-        return view('parte2', ['variaveis' => $variaveis, 'restricoes' => $restricoes]);
+
+         return view('parte2', ['variaveis' => $variaveis, 'restricoes' => $restricoes]);
+
     }
+    public function meuOutroMetodo()
+    {
+        $variaveis = $request->input('variavel');
+        $restricoes = $request->input('restricao');
+
+        return view('components.navbar', ['variaveis' => $variaveis, 'restricoes' => $restricoes]);
+    }
+
 
     function calcular(Request $request){
 
-        dd($request);
-        //return view('parte3');
+
+        return view('parte3');
 
     }
 }

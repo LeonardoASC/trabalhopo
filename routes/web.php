@@ -24,7 +24,8 @@ Route::get('/', function () {
 })->name('inicio');
 
 Route::get('/parte1', function () {
-    return view('parte1');
+
+    return view('parte1',  ['variaveis' => $variaveis, 'restricoes' => $restricoes]);
 })->name('parte1');
 
 Route::post('/parte2', [algebricoController::class, 'index'])->name('parte2');

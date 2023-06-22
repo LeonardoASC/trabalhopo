@@ -9,8 +9,10 @@
 </head>
 
 <body>
+    @component('components.navbar')
 
-    <x-Navbar />
+    @endcomponent
+
 
     <div class="containerpage">
         <div class="w-1/2 h-1/2">
