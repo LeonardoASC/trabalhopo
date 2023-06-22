@@ -32,13 +32,6 @@ class algebricoController extends Controller
          return view('parte2', ['variaveis' => $variaveis, 'restricoes' => $restricoes]);
 
     }
-    public function meuOutroMetodo()
-    {
-        $variaveis = $request->input('variavel');
-        $restricoes = $request->input('restricao');
-
-        return view('components.navbar', ['variaveis' => $variaveis, 'restricoes' => $restricoes]);
-    }
 
 
     function calcular(Request $request){

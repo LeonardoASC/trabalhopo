@@ -30,11 +30,6 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     @include('components.navbar', ['variaveis' => $variaveis, 'restricoes' => $restricoes])
-
-
-
-
-
                     <br>
                     <form method="post" action="{{ route('simplex') }}" autocomplete="off">
                         @csrf
