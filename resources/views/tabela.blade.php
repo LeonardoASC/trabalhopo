@@ -19,7 +19,7 @@
             <div class="w-full my-2 h-px bg-black"></div>
             <table class="w-full h-full flex flex-col px-5">
                 <thead>
-                    <tr class="flex w-full justify-between">
+                    <tr class="flex w-full justify-between items-center">
                         <th>Z</th>
                         @for ($i = 0; $i < $simplex['variavel'] + $simplex['restricao']; $i++)
                             <th class="uppercase">x{{ $i + 1 }}</th>
@@ -30,7 +30,7 @@
                 <tbody>
 
                     @for ($i = 0; $i < $simplex['restricao']; $i++)
-                        <tr class="flex w-full justify-between">
+                        <tr class="flex w-full justify-between items-center">
                             <td>0</td>
                             @foreach ($simplex['restricao' . ($i + 1)] as $key => $item)
                                 @if ($simplex['restricao' . ($i + 1)] == $simplex[$linha_pivo])
@@ -46,7 +46,7 @@
                         </tr>
                     @endfor
 
-                    <tr class="flex w-full justify-between">
+                    <tr class="flex w-full justify-between items-center">
                         <td>1</td>
                         @foreach ($simplex['funcao'] as $key => $item)
                             @if (isset($simplex['z']) && $key == 'rz')

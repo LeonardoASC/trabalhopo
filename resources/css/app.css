@@ -28,11 +28,18 @@ body{
     @apply w-full h-full flex justify-center items-center min-h-[80vh]
 }
 .inputcontainer{
-    @apply w-full h-20 flex flex-col items-center
+    @apply w-2/3 h-20 flex flex-col gap-2
 }
 input{
-    @apply w-full h-16 bg-[#E2E2E2] px-4
+    @apply w-full h-16 rounded-md px-4 border-2 border-[#E2E2E2]
 }
 .botao{
-    @apply w-64 h-12 px-5 py-3 bg-[#8DE0CC] font-semibold hover:shadow-md duration-300 rounded-3xl flex justify-center items-center
+    @apply w-64 h-10 px-5 py-3 bg-[#8DE0CC] font-semibold hover:shadow-md duration-300 rounded-3xl flex justify-center items-center
+}
+
+th{
+    @apply w-10 h-10 flex text-center items-center justify-center
+}
+td{
+    @apply w-10 h-10 flex text-center items-center justify-center
 }
