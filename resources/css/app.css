@@ -9,3 +9,21 @@
     /* font-family: 'Montserrat', sans-serif; */
     font-family: 'Poppins', sans-serif;
 }
+
+body{
+    @apply bg-[#F5F5F5] px-16 py-5
+}
+
+
+.containerpage{
+    @apply w-full h-full flex justify-center items-center min-h-[80vh]
+}
+.input{
+    @apply w-full h-20 flex flex-col items-center
+}
+.campo{
+    @apply w-full h-16 rounded-3xl bg-[#E2E2E2] px-4
+}
+.botao{
+    @apply w-40 h-12 px-5 py-3 bg-[#8DE0CC] font-semibold hover:shadow-md duration-300 rounded-3xl
+}

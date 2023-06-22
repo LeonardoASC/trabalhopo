@@ -8,29 +8,28 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-[#F5F5F5] px-16 py-5">
+<body>
 
     <x-Navbar />
 
-    <div class="painelParte1">
-        <div style="align-items: center; justify-content: center; " class="">
-            <form method="post" action="{{ route('parte2') }}" autocomplete="off">
+    <div class="containerpage">
+        <div class="w-1/2 h-1/2">
+            <form method="post" action="{{ route('parte2') }}" autocomplete="off" class="flex flex-col gap-5">
                 @csrf
                 <div class="input">
-                    <label>Quantidade variáveis:</label>
-                    <input type="number" class="form-control" name="variavel">
+                    <label class="text-semibold text-xl">VARIÁVEIS</label>
+                    <input type="number" name="variavel" class="campo">
                     {{ $errors->has('variavel') ? $errors->first('variavel') : '' }}
                 </div>
                 <div class="input">
-                    <label>Quantidade restrições:</label>
-                    <input type="number" class="form-control" name="restricao">
+                    <label class="text-semibold text-xl">RESTRIÇÕES</label>
+                    <input type="number" name="restricao" class="campo">
                     {{ $errors->has('restricao') ? $errors->first('restricao') : '' }}
                 </div>
-
-                <br>
-
-                <button type="submit" class="btn btn-default col-auto">Algébrico</button>
-                <button style="margin-left: 50px" type="submit" class="btn btn-default col-auto">Grafico</button>
+                <div class="w-full flex justify-center">
+                    <button type="submit" class="botao">ALGÉBRICO</button>
+                    <button style="margin-left: 50px" type="submit" class="botao">GRÁFICO</button>
+                </div>
             </form>
         </div>
     </div>
