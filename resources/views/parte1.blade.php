@@ -15,14 +15,14 @@
         <div class="w-1/2 h-1/2">
             <form method="post" action="{{ route('parte2') }}" autocomplete="off" class="flex flex-col gap-5">
                 @csrf
-                <div class="input">
+                <div class="inputcontainer">
                     <label class="text-semibold text-xl">VARIÁVEIS</label>
-                    <input type="number" name="variavel" class="campo">
+                    <input type="number" name="variavel" >
                 </div>
                 {{ $errors->has('variavel') ? $errors->first('variavel') : '' }}
-                <div class="input">
+                <div class="inputcontainer">
                     <label class="text-semibold text-xl">RESTRIÇÕES</label>
-                    <input type="number" name="restricao" class="campo">
+                    <input type="number" name="restricao" >
                 </div>
                 {{ $errors->has('restricao') ? $errors->first('restricao') : '' }}
                 <div class="w-full flex justify-center">
