@@ -23,9 +23,10 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+    <body class="bg-black">
+        <div class="bg-black">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3>Algoritmo simplex <small>({{ $variaveis }} variaveis e {{ $restricoes }} restrições)</small></h3>
