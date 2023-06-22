@@ -25,11 +25,11 @@
         </style>
          <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
-    <body class="bg-black">
+    <body>
         <div class="bg-black">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3>Algoritmo simplex <small>({{ $variaveis }} variaveis e {{ $restricoes }} restrições)</small></h3>
+                    @include('components.navbar', ['variaveis' => $variaveis, 'restricoes' => $restricoes])
                     <br>
                     <form method="post" action="{{ route('simplex') }}" autocomplete="off">
                         @csrf

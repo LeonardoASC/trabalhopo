@@ -4,52 +4,39 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projeto Simplex</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kablammo&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Moirai+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ asset('css/part1.css') }}">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>!SIMPEX</title>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="fundototales">
-    <div class="">
-        <div class="painelParte1">
-            <div style="align-items: center; justify-content: center; " class="">
+<body>
+    @component('components.navbar')
 
-                <p class="centroP">
-                    <span class="blackSIM">!SIM</span>
-                    <span class="greenPEX">PEX</span>
-                </p>
-                <br>
-                <form method="post" action="{{ route('parte2') }}" autocomplete="off">
-                    @csrf
-                    <div class="form-group">
-                        <label>Quantidade variáveis:</label>
-                        <input type="number" class="form-control" name="variavel">
-                        {{ $errors->has('variavel') ? $errors->first('variavel') : '' }}
-                    </div>
-                    <div class="form-group">
-                        <label>Quantidade restrições:</label>
-                        <input type="number" class="form-control" name="restricao">
-                        {{ $errors->has('restricao') ? $errors->first('restricao') : '' }}
-                    </div>
+    @endcomponent
 
-                    <br>
 
-                    <button type="submit" class="btn btn-default col-auto">Algébrico</button>
-                    <button style="margin-left: 50px" type="submit" class="btn btn-default col-auto">Grafico</button>
-                </form>
-            </div>
+    <div class="containerpage">
+        <div class="w-1/2 h-1/2">
+            <form method="post" action="{{ route('parte2') }}" autocomplete="off" class="flex flex-col gap-5">
+                @csrf
+                <div class="inputcontainer">
+                    <label class="text-semibold text-xl">VARIÁVEIS</label>
+                    <input type="number" name="variavel" >
+                </div>
+                {{ $errors->has('variavel') ? $errors->first('variavel') : '' }}
+                <div class="inputcontainer">
+                    <label class="text-semibold text-xl">RESTRIÇÕES</label>
+                    <input type="number" name="restricao" >
+                </div>
+                {{ $errors->has('restricao') ? $errors->first('restricao') : '' }}
+                <div class="w-full flex justify-center">
+                    <button type="submit" class="botao">ALGÉBRICO</button>
+                    <button style="margin-left: 50px" type="submit" class="botao">GRÁFICO</button>
+                </div>
+            </form>
         </div>
     </div>
+
+    <x-Footer />
 </body>
 
 </html>
