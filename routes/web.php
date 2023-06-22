@@ -24,7 +24,6 @@ Route::get('/', function () {
 })->name('inicio');
 
 Route::get('/parte1', function () {
-
     return view('parte1');
 })->name('parte1');
 

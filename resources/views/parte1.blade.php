@@ -10,10 +10,7 @@
 
 <body>
     @component('components.navbar')
-
     @endcomponent
-
-
     <div class="containerpage">
         <div class="w-1/2 h-1/2">
             <form method="post" action="{{ route('parte2') }}" autocomplete="off" class="flex flex-col gap-5">
@@ -36,7 +33,8 @@
         </div>
     </div>
 
-    <x-Footer />
+    @component('components.footer')
+    @endcomponent
 </body>
 
 </html>
