@@ -30,11 +30,17 @@ body{
 .inputcontainer{
     @apply w-2/3 h-20 flex flex-col gap-2
 }
+.selects{
+    @apply px-2 py-1 rounded-md bg-[#E2E2E2] hover:shadow-md duration-300
+}
 input{
     @apply w-full h-16 rounded-md px-4 border-2 border-[#E2E2E2]
 }
+.inputsec{
+    @apply w-full h-12 rounded-md px-4 border-2 border-[#E2E2E2]
+}
 .botao{
-    @apply w-64 h-10 px-5 py-3 bg-[#8DE0CC] font-semibold hover:shadow-md duration-300 rounded-3xl flex justify-center items-center
+    @apply w-60 h-10 px-5 py-3 bg-[#8DE0CC] font-semibold hover:shadow-md duration-300 rounded-md flex justify-center items-center
 }
 
 th{

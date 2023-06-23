@@ -9,73 +9,69 @@
 
 <body>
     @include('components.navbar', ['variaveis' => $variaveis, 'restricoes' => $restricoes])
-    <div class="flex flex-col">
-        <form class="flex flex-col w-full justify-center items-center" method="post" action="{{ route('simplex') }}"
-            autocomplete="off">
-            @csrf
+    <div class="containerpage">
+        <div class="">
+            <form
+                class="flex flex-col gap-2 border-2 p-5 border-[#E2E2E2] shadow-sm bg-[#f8f6f6] rounded-sm items-center h-full justify-center text-base"
+                method="post" action="{{ route('simplex') }}" autocomplete="off">
+                @csrf
 
-            <div class="flex w-full justify-center items-center">
-                <label>Objetivo:</label>
-                <select name="objetivo" class="form-control">
-                    <option value="max">Maximizar</option>
-                    <option value="min">Minimizar</option>
-                </select>
-            </div>
+                <div class="flex w-full items-center gap-3 ">
+                    <label>Objetivo:</label>
+                    <select name="objetivo" class="selects">
+                        <option value="max">Maximizar</option>
+                        <option value="min">Minimizar</option>
+                    </select>
+                </div>
 
-            <input type="hidden" name="variavel" value="{{ $variaveis }}">
-            <input type="hidden" name="restricao" value="{{ $restricoes }}">
+                <input type="hidden" name="variavel" value="{{ $variaveis }}">
+                <input type="hidden" name="restricao" value="{{ $restricoes }}">
 
-            <br>
-            <label class="flex w-full justify-center items-center">Função</label>
-            <br>
-            <div class="flex">
-                @for ($i = 0; $i < $variaveis; $i++)
-                    <div class="flex justify-center items-center">
-                        <input style="margin: 0px 15px 0px 15px" name="funcao[]" type="number" step="any" class="m-4">
-                        <label style="margin: 0px 10px 0px 10px" class="mx-11">X{{ $i + 1 }}</label>
-                        @if ($i != $variaveis - 1)
-                            {{ '+' }}
-                        @endif
-                    </div>
-                @endfor
-            </div>
-
-
-
-            <label>Restrições</label>
-
-            @for ($j = 0; $j < $restricoes; $j++)
-                <div class="flex justify-center items-center" style="padding: 10px;">
-
+                <div class="w-full bg-black my-1 h-px opacity-10"></div>
+                <label class="flex w-full justify-center items-center uppercase">Função</label>
+                <div class="flex">
                     @for ($i = 0; $i < $variaveis; $i++)
-                        <div class="flex justify-center items-center" style="margin-left: 10px">
-                            <input type="number" step="any" name="restricao{{ $j }}[]" class="">
-                            <label>X{{ $i + 1 }}</label>
+                        <div class="flex justify-center items-center">
+                            <input name="funcao[]" type="number" step="any" class="inputsec">
+                            <label class="mr-1">X{{ $i + 1 }}</label>
                             @if ($i != $variaveis - 1)
-                                {{ '+' }}
+                                <p class="mx-2">{{ '+' }}</p>
                             @endif
-
                         </div>
                     @endfor
-
-                    <select name="tipo{{ $j }}" class="">
-                        <option value="{{ 0 }}">=</option>
-                        <option selected value="{{ 1 }}">
-                            <= <option value="{{ 2 }}">>=
-                        </option>
-                    </select>
-                    <div class="">
-                        <input name="restricao{{ $j }}[]" type="number" step="any" class="">
-
-                    </div>
-
                 </div>
-            @endfor
+                <div class="w-full bg-black my-1 h-px opacity-10"></div>
 
-            <br>
-            <button type="submit" class="btn btn-default">Calcular</button>
-        </form>
+                <label class="uppercase">Restrições</label>
 
+                @for ($j = 0; $j < $restricoes; $j++)
+                    <div class="flex justify-center items-center" style="padding: 10px;">
+                        @for ($i = 0; $i < $variaveis; $i++)
+                            <div class="flex justify-center items-center">
+                                <input type="number" step="any" name="restricao{{ $j }}[]"
+                                    class="inputsec">
+                                <label class="mr-1">X{{ $i + 1 }}</label>
+                                @if ($i != $variaveis - 1)
+                                    <p class="mx-2">{{ '+' }}</p>
+                                @endif
+
+                            </div>
+                        @endfor
+                        <select name="tipo{{ $j }}" class="selects mx-2">
+                            <option value="{{ 0 }}">=</option>
+                            <option selected value="{{ 1 }}">
+                                <= <option value="{{ 2 }}">>=
+                            </option>
+                        </select>
+                        <div class="">
+                            <input name="restricao{{ $j }}[]" type="number" step="any"
+                                class="inputsec">
+                        </div>
+                    </div>
+                @endfor
+                <button type="submit" class="botao">Calcular</button>
+            </form>
+        </div>
     </div>
     @component('components.footer')
     @endcomponent

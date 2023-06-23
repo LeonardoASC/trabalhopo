@@ -12,7 +12,7 @@
     @component('components.navbar')
     @endcomponent
     <div class="containerpage">
-        <div class="w-[55%] h-[30rem]">
+        <div class="w-[45%] h-[25rem]">
             <form method="post" action="{{ route('parte2') }}" autocomplete="off" class="flex flex-col gap-5 border-2 p-5 border-[#E2E2E2] shadow-sm bg-[#f8f6f6] rounded-sm items-center h-full justify-center">
                 @csrf
                 <div class="inputcontainer">
@@ -25,9 +25,9 @@
                     <input type="number" name="restricao" >
                 </div>
                 {{ $errors->has('restricao') ? $errors->first('restricao') : '' }}
-                <div class="w-full flex justify-center mt-4">
+                <div class="w-full flex justify-center mt-4 gap-5">
                     <button type="submit" class="botao">ALGÉBRICO</button>
-                    <button style="margin-left: 50px" type="submit" class="botao">GRÁFICO</button>
+                    <button type="submit" class="botao">GRÁFICO</button>
                 </div>
             </form>
         </div>

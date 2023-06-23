@@ -14,9 +14,9 @@
     @component('components.navbar')
     @endcomponent
     <diV class="containerpage">
-        <div class="w-1/2 h-1/2 flex flex-col justify-center items-center">
+        <div class="w-[45%] h-full flex flex-col gap-5 border-2 p-5 border-[#E2E2E2] shadow-sm bg-[#f8f6f6] rounded-sm items-center justify-center">
             <h1 class="text-4xl text-[#8DE0CC] uppercase">Interação {{ $simplex['interacao'] }}</h1>
-            <div class="w-full my-2 h-px bg-black"></div>
+            <div class="w-full my-2 h-px bg-black opacity-10"></div>
             <table class="w-full h-full flex flex-col px-5">
                 <thead>
                     <tr class="flex w-full justify-between items-center">
@@ -72,7 +72,7 @@
                 </tbody>
             </table>
 
-            <div class="w-full my-2 h-px bg-black"></div>
+            <div class="w-full my-2 h-px bg-black opacity-10"></div>
 
             @if (isset($simplex['z']))
                 <p class="my-4">A solução ótima é Z =
