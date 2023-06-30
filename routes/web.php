@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\algebricoController;
-
+use App\Http\Controllers\ExpensesController;
 use App\Http\Controllers\SimplexController;
 
 /*
@@ -30,6 +30,8 @@ Route::get('/parte1', function () {
 Route::post('/parte2', [algebricoController::class, 'index'])->name('parte2');
 
 Route::post('/parte3', [algebricoController::class, 'calcular'])->name('parte3');
+
+Route::get('/expenses', [ExpensesController::class, 'index'])->name('index');
 
 Route::fallback(function () {
 
