@@ -101,7 +101,7 @@ class SimplexController extends Controller
 
         $request->session()->put('simplex', $simplex);
 
-        return view('parte3', compact('simplex'));
+        return view('continuaCalc', compact('simplex'));
     }
 
     public function menor_igual($resticao, $qnt_variavel, $ultima_var, $n_restricao)

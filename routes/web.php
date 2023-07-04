@@ -20,20 +20,21 @@ Route::post('/simplex',[SimplexController::class, 'simplex'])->name('simplex');
 Route::get('/tabela',[SimplexController::class, 'tabela'])->name('tabela');
 
 Route::get('/', function () {
-    return view('parte1');
+    return view('pages.variavelrestricao');
 })->name('inicio');
 
-Route::get('/parte1', function () {
-    return view('parte1');
-})->name('parte1');
+Route::get('/variavelrestricao', function () {
+    return view('pages.variavelrestricao');
+})->name('variavelrestricao');
 
-Route::post('/parte2', [algebricoController::class, 'index'])->name('parte2');
 
-Route::post('/parte3', [algebricoController::class, 'calcular'])->name('parte3');
+Route::post('/inicioCalc', [algebricoController::class, 'index'])->name('inicioCalc');
+
+Route::post('/continuaCalc', [algebricoController::class, 'calcular'])->name('continuaCalc');
 
 Route::get('/expenses', [ExpensesController::class, 'index'])->name('index');
 
 Route::fallback(function () {
 
-    echo 'Anota acessada não existe. <a href= "' . route('parte1') . '">Clique aqui</a> para ir para a página inicial';
+    echo 'Anota acessada não existe. <a href= "' . route('pages.variavelrestricao') . '">Clique aqui</a> para ir para a página inicial';
 });

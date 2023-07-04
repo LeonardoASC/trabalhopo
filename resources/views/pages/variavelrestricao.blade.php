@@ -13,7 +13,7 @@
     @endcomponent
     <div class="containerpage">
         <div class="w-[45%] h-[25rem]">
-            <form method="post" action="{{ route('parte2') }}" autocomplete="off" class="flex flex-col gap-5 border-2 p-5 border-[#E2E2E2] shadow-sm bg-[#f8f6f6] rounded-sm items-center h-full justify-center">
+            <form method="post" action="{{ route('inicioCalc') }}" autocomplete="off" class="flex flex-col gap-5 border-2 p-5 border-[#E2E2E2] shadow-sm bg-[#f8f6f6] rounded-sm items-center h-full justify-center">
                 @csrf
                 <div class="inputcontainer">
                     <label class="text-semibold text-lg">Variáveis</label>
