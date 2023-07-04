@@ -87,7 +87,7 @@
                 <a href="{{ route('inicio') }}" class="botao">Novo Problema</a>
             @else
                 <p>Pivo = {{ $simplex[$linha_pivo][$var] }}</p>
-                <a href="{{ route('tabela') }}" class="botao">Continuar</a>
+                <a href="{{ route('pages.tabela') }}" class="botao">Continuar</a>
             @endif
             {{--
                 <p>Menor valor de Z = {{$min}}</p>

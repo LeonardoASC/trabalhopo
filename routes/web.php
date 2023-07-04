@@ -17,7 +17,7 @@ use App\Http\Controllers\SimplexController;
 */
 
 Route::post('/simplex',[SimplexController::class, 'simplex'])->name('simplex');
-Route::get('/tabela',[SimplexController::class, 'tabela'])->name('tabela');
+Route::get('/tabela',[SimplexController::class, 'tabela'])->name('pages.tabela');
 
 Route::get('/', function () {
     return view('pages.variavelrestricao');
@@ -28,9 +28,9 @@ Route::get('/variavelrestricao', function () {
 })->name('variavelrestricao');
 
 
-Route::post('/inicioCalc', [algebricoController::class, 'index'])->name('inicioCalc');
+Route::post('/inicioCalc', [algebricoController::class, 'index'])->name('pages.inicioCalc');
 
-Route::post('/continuaCalc', [algebricoController::class, 'calcular'])->name('continuaCalc');
+Route::post('/continuaCalc', [algebricoController::class, 'calcular'])->name('pages.continuaCalc');
 
 Route::get('/expenses', [ExpensesController::class, 'index'])->name('index');
 

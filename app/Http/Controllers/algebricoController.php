@@ -29,14 +29,14 @@ class algebricoController extends Controller
         $restricoes = $request->input('restricao');
 
 
-         return view('inicioCalc', ['variaveis' => $variaveis, 'restricoes' => $restricoes]);
+         return view('pages.inicioCalc', ['variaveis' => $variaveis, 'restricoes' => $restricoes]);
 
     }
 
     function calcular(Request $request){
 
 
-        return view('continuaCalc');
+        return view('pages.continuaCalc');
 
     }
 }

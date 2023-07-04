@@ -57,7 +57,7 @@
 
             <div class="w-full h-px bg-black my-1 opacity-10"></div>
 
-            <a href="{{ route('tabela') }}" class="botao">Continuar</a>
+            <a href="{{ route('pages.tabela') }}" class="botao">Continuar</a>
         </div>
     </div>
     @component('components.footer')

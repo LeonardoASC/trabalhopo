@@ -101,7 +101,7 @@ class SimplexController extends Controller
 
         $request->session()->put('simplex', $simplex);
 
-        return view('continuaCalc', compact('simplex'));
+        return view('pages.continuaCalc', compact('simplex'));
     }
 
     public function menor_igual($resticao, $qnt_variavel, $ultima_var, $n_restricao)
@@ -236,7 +236,7 @@ class SimplexController extends Controller
             $var = $simplex['var'];
             $linha_pivo = $simplex['linha_pivo'];
 
-            return view('tabela', compact('simplex', 'min', 'var', 'linha_pivo'));
+            return view('pages.tabela', compact('simplex', 'min', 'var', 'linha_pivo'));
         }else{
             if(min(array_slice($simplex['w'], 0, count($simplex['w']) - 1)) >= 0){// Verifica se não tem nenhum valor negativo em w
                 if(round($simplex['w']['rw'], 10) == 0){// Verifica se o problema tem solução
@@ -257,7 +257,7 @@ class SimplexController extends Controller
                     $var = $simplex['var'];
                     $linha_pivo = $simplex['linha_pivo'];
 
-                    return view('tabela', compact('simplex', 'min', 'var', 'linha_pivo'));
+                    return view('pages.tabela', compact('simplex', 'min', 'var', 'linha_pivo'));
                 }
             }else{
                 $simplex = $this->duas_fases($simplex);
@@ -265,13 +265,13 @@ class SimplexController extends Controller
                 $var = $simplex['var'];
                 $linha_pivo = $simplex['linha_pivo'];
 
-                return view('tabela', compact('simplex', 'min', 'var', 'linha_pivo'));
+                return view('pages.tabela', compact('simplex', 'min', 'var', 'linha_pivo'));
             }
 
             dd($simplex);//round($simplex['w']['rw'], 10) == 0
 
 
-            return view('tabela', compact('simplex', 'min', 'var', 'linha_pivo'));
+            return view('pages.tabela', compact('simplex', 'min', 'var', 'linha_pivo'));
         }
 
         dd($simplex);
@@ -292,7 +292,7 @@ class SimplexController extends Controller
         $var = $simplex['var'];
         $linha_pivo = $simplex['linha_pivo'];
 
-        return view('tabela', compact('simplex', 'min', 'var', 'linha_pivo'));
+        return view('pages.tabela', compact('simplex', 'min', 'var', 'linha_pivo'));
     }
 
     public function interacoes($old_simplex)
