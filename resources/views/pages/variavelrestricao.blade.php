@@ -26,8 +26,7 @@
                 </div>
                 {{ $errors->has('restricao') ? $errors->first('restricao') : '' }}
                 <div class="w-full flex justify-center mt-4 gap-5">
-                    <button type="submit" class="botao">ALGÉBRICO</button>
-                    <button type="submit" class="botao">GRÁFICO</button>
+                    <button type="submit" class="botao">CALCULAR</button>
                 </div>
             </form>
         </div>

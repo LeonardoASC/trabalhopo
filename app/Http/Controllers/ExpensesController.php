@@ -11,7 +11,12 @@ class ExpensesController extends Controller
      */
     public function index(ExpensesChart $chart)
     {
-        return view('index', ['chart' => $chart->build()]);   
+        // return view('index', ['chart' => $chart->build()]);
+        $values = [2, 1000, 3]; // Substitua pelos valores obtidos do método simplex
+
+        $chart = ExpensesChart::simplexChart($values);
+
+        return view('index', compact('chart'));
     }
 
     /**

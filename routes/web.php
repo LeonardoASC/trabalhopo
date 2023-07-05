@@ -32,7 +32,7 @@ Route::post('/inicioCalc', [algebricoController::class, 'index'])->name('pages.i
 
 Route::post('/continuaCalc', [algebricoController::class, 'calcular'])->name('pages.continuaCalc');
 
-Route::get('/expenses', [ExpensesController::class, 'index'])->name('index');
+Route::post('/expenses', [ExpensesController::class, 'index'])->name('index');
 
 Route::fallback(function () {
 

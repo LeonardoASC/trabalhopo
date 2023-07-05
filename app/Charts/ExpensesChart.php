@@ -15,11 +15,34 @@ class ExpensesChart
 
     public function build(): \ArielMejiaDev\LarapexCharts\LineChart
     {
-        return $this->chart->lineChart()
-        ->setTitle('Sales during 2021.')
-        ->setSubtitle('Physical sales vs Digital sales.')
-        ->addData('Physical sales', [40, 93, 35, 42, 18, 82])
-        ->addData('Digital sales', [70, 29, 77, 28, 55, 45])
-        ->setXAxis(['January', 'February', 'March', 'April', 'May', 'June']);
+        $labels = ['Variável 1', 'Variável 2', 'Variável 3'];
+        $values = [2, 1000, 3];
+
+        // return $this->chart->lineChart()
+        // ->setTitle('Sales during 2021.')
+        // ->setSubtitle('Physical sales vs Digital sales.')
+        // ->addData('Physical sales', [40, 93, 35, 42, 18, 82])
+        // ->addData('Digital sales', [70, 29, 77, 28, 55, 45])
+        // ->setXAxis(['January', 'February', 'March', 'April', 'May', 'June']);
+
+    //     $chart = new LarapexChart;
+    //     $chart->barChart()
+    //       ->setTitle('Gráfico do Método Simplex')
+    //       ->setLabels($labels)
+    //       ->setDataset([$values]);
+
+    // return view('expenses', compact('chart'));
     }
+
+    public static function simplexChart($values)
+    {
+        $chart = (new LarapexChart)
+            ->setTitle('Gráfico do Método Simplex')
+            ->setLabels(['Variável 1', 'Variável 2', 'Variável 3', 'Variável 4'])
+            ->setDataset([$values])
+            ->setType('bar');
+
+        return $chart;
+    }
+
 }

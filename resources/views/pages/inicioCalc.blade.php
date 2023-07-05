@@ -38,8 +38,13 @@
                                 <p class="mx-2">{{ '+' }}</p>
                             @endif
                         </div>
+                        {{ $errors->has('funcao.'.$i) ? $errors->first('funcao.'.$i) : '' }}
                     @endfor
                 </div>
+
+
+
+
                 <div class="w-full bg-black my-1 h-px opacity-10"></div>
 
                 <label class="uppercase">Restrições</label>
@@ -69,7 +74,14 @@
                         </div>
                     </div>
                 @endfor
-                <button type="submit" class="botao">Calcular</button>
+                <div class="w-full bg-black my-1 h-px opacity-10"></div>
+                    <p>
+                        Escolha a forma de representação do seu resultado!
+                    </p>
+                <div class="w-full flex justify-center mt-4 gap-5">
+                    <button type="submit" class="botao">ALGEBRICO</button>
+                    <button type="submit" class="botao" formaction="/expenses">GRAFICO</button>
+                </div>
             </form>
         </div>
     </div>

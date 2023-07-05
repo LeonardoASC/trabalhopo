@@ -12,15 +12,6 @@ class SimplexController extends Controller
     {
         $data = $request->all();
 
-        // $data['variavel'] = 3;
-        // $data['restricao'] = 4;
-
-        // $data['funcao'] = [10, 8, 1];
-        // $data['restricao1'] = [3, 3, 2, 30];
-        // $data['restricao2'] = [6, 3, 0, 48];
-        // $data['restricao3'] = [6, 3, 0, 48];
-        // $data['restricao4'] = [6, 3, 0, 48];
-
         $M = 0;
         $ultima_var = $data['variavel'];
         $qnt_variavel = $data['variavel'];
@@ -68,23 +59,6 @@ class SimplexController extends Controller
             $simplex['restricao'.$i] = $resticao['simplex'];
 
             $ultima_var = $resticao['ultima_var'];
-            /*dd([$resticao, $simplex]);
-
-            for ($j=0; $j < $data['variavel']; $j++) {
-                $simplex['restricao'.$i]['X'.($j + 1)] = $data['restricao'.($i-1)][$j];
-
-                if(($j+1) == $data['variavel']){
-                    for ($k= ($j+1); $k < ($data['variavel'] + $data['restricao']); $k++) {
-                        if(($data['variavel'] + ($i-1)) == $k){
-                            $simplex['restricao'.$i]['X'.($k + 1)] = 1;
-                        }else{
-                            $simplex['restricao'.$i]['X'.($k + 1)] = 0;
-                        }
-                    }
-                }
-            }
-
-            $simplex['restricao'.$i]['r'.$i] = $data['restricao'.($i-1)][$j];*/
         }
 
         $simplex['objetivo'] = $data['objetivo'];
@@ -95,7 +69,6 @@ class SimplexController extends Controller
 
         if($simplex['objetivo'] == "min"){
             foreach ($simplex['funcao'] as $key => $value) {
-                //$simplex['funcao'][$key] *= -1;
             }
         }
 
