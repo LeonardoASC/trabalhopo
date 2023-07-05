@@ -69,6 +69,7 @@ class SimplexController extends Controller
 
         if($simplex['objetivo'] == "min"){
             foreach ($simplex['funcao'] as $key => $value) {
+                $simplex['funcao'][$key] *= -1;
             }
         }
 
