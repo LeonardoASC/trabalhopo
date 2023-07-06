@@ -38,9 +38,40 @@ class ExpensesChart
     {
         $chart = (new LarapexChart)
             ->setTitle('Gráfico do Método Simplex')
-            ->setLabels(['Variável 1', 'Variável 2', 'Variável 3', 'Variável 4'])
+            ->setLabels(range(0,20))
             ->setDataset([$values])
-            ->setType('bar');
+            ->setDataset([
+                [
+                    'name' => 'Restrição 1',
+                    'data' => [
+                        ['x' => 2, 'y' => 0],
+                        ['x' => 2, 'y' => 4]
+                    ],
+                    'color' => 'red',
+                    'lineWidth' => 2,
+                ],
+                [
+                    'name' => 'Restrição 2',
+                    'data' => [
+                        ['x' => 0, 'y' => 3],
+                        ['x' => 5, 'y' => 3]
+                    ],
+                    'color' => 'blue',
+                    'lineWidth' => 2,
+                ],
+                [
+                    'name' => 'Restrição 3',
+                    'data' => [
+                        ['x' => -1, 'y' => -3],
+                        ['x' => -1, 'y' => 8]
+                    ],
+                    'color' => 'blue',
+                    'lineWidth' => 2,
+                ],
+
+                ])
+            ->setType('line');
+
 
         return $chart;
     }
